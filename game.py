@@ -5,10 +5,10 @@ def diceroll():
 import time
 
 def help1():
-	print("List of Commands: ")+("\nGo\nTalk\nExamine\nTake\nFight\nStat")
+	print(("List of Commands: ")+("\nGo\nTalk\nExamine\nTake\nFight\nStat"))
 	
 def stats():
-	print("Health: "+str(Health)),("\nSanity: "+str(Sanity)),("\nGorilla Power: "+str(GorillaPower))
+	print(("Health: "+str(Health)),("\nSanity: "+str(Sanity)),("\nGorilla Power: "+str(GorillaPower)))
 
 Health = 10
 Sanity = 5
@@ -49,38 +49,45 @@ while loop == 2:
 while loop == 3:
 	print("-----------------------------------")
 	time.sleep(1)
-	print("You arrive at the gorrila enclosure ")+("\nThere is a big glass pane to see the gorrilas ")+("\nThere is also an infomation panel about the gorrilas ")+("\nPaths lead to the east and west")
+	print(("You arrive at the gorrila enclosure ")+("\nThere is a big glass pane to see the gorrilas ")+("\nThere is also an infomation panel about the gorrilas ")+("\nPaths lead to the east and west"))
+	loop = 4
+
+while loop = 4:
 	first = input("What do you do?")
 	if first.lower() == "help":
 		help1()
-		loop = 3
+		loop = 4
 	if first.lower() == "stats":
 		stats()
-		loop = 3
+		loop = 4
 	if "go" and "east" in first.lower():
 		print("-----------------------------------")
 		print("You head east")
-		loop = 4
+		loop = 5
 	if "go" and "west" in first.lower():
 		print("-----------------------------------")
 		print("You head west")
-		loop = 5
+		loop = 6
 	if "take" in first.lower():
 		print("-----------------------------------")
 		print("Nothing to take!")
-		loop = 3
+		loop = 4
 	if "examine" and "panel" in first.lower():
 		print("-----------------------------------")
 		print("The panel is boring. You want to see the gorrilas!")
-		loop = 3
-	if "examine" in first.lower():
+		loop = 4
+	if "examine" not "panel" or "glass" in first.lower():
 		print("-----------------------------------")
 		print("Examine what?")
-		loop = 3
+		loop = 4
 	if "examine" and "glass" in first.lower():
 		print("-----------------------------------")
 		print("You see Harambe in all his glory!"),("\nGain a Gorilla Power")
-		loop = 3
+		if GorillaPower < 1:
+			GorillaPower = GorillaPower+1
+		else:
+			print("You fail to absorb the power")
+		loop = 4
 	else:
 		print("-----------------------------------")
-		loop = 3
+		loop = 4
